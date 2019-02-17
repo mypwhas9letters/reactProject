@@ -5,6 +5,8 @@ class App extends Component {
     return (
       <div className="App">
         <div>Hi</div>
+        <div>Testing push passphrase
+        </div>
       </div>
     );
   }
