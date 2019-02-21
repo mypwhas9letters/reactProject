@@ -4,8 +4,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <div>Hi</div>
-        <div>Testing push passphrase
+        <div className="ui container">
+          <h1>Testing push passphrase</h1>
         </div>
       </div>
     );
