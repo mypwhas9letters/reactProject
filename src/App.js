@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
+import Todos from './components/Todos'
 
 class App extends Component {
   render() {
     return (
       <div className="App">
         <div className="ui container">
-          <h1>Testing push passphrase</h1>
+          <Todos />
         </div>
       </div>
     );
