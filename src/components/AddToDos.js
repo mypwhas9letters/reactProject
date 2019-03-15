@@ -13,6 +13,8 @@ class AddToDos extends Component {
   onSubmitForm = (e) => {
     e.preventDefault()
     this.props.onClickAdd(this.state)
+    let nextId = this.state.id + 1
+    this.setState({id: nextId, task:""})
   }
 
   render(){

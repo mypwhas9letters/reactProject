@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import AddToDos from './AddToDos'
+import AddToDos from './AddToDos';
+import ToDoItem from './toDoItem'
 
 class Todos extends Component {
   state = {
@@ -12,24 +13,26 @@ class Todos extends Component {
     }]
   }
 
-  buildList = (list) => {
-    console.log(list)
-    return list.toDos.map(item => <li key={item.id}>{item.task}</li>)
-  }
 
   onClickAdd = (toDo) => {
-    let newArr = this.state.toDos.push(toDo)
+    let newArr = [...this.state.toDos, toDo]
     this.setState({toDos: newArr})
-    console.log(this.state)
+  }
+
+  onDeleteTask = (deleteKey) => {
+    let newArr = [...this.state.toDos].filter(toDo => toDo.id !== deleteKey)
+    this.setState({toDos: newArr})
   }
 
   render(){
-    const arr = this.buildList(this.state)
+    const arr = this.state.toDos.map(todo => <ToDoItem key={todo.id} item={todo} onDelete={this.onDeleteTask}/>)
     return(
       <div>
         <h1>List of To Dos</h1>
-        { arr }
         <AddToDos onClickAdd={this.onClickAdd}/>
+        <div className='ui relaxed divided list'>
+          { arr }
+        </div>
       </div>
     )
   }
