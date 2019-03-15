@@ -4,10 +4,8 @@ import Todos from './components/Todos'
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <div className="ui container">
-          <Todos />
-        </div>
+      <div className="ui container">
+        <Todos />
       </div>
     );
   }
